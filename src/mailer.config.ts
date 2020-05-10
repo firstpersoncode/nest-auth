@@ -1,5 +1,5 @@
 import { MailerOptions, PugAdapter } from '@nestjs-modules/mailer'
-import { join } from 'path'
+import { join }                      from 'path'
 // import { createTransport } from 'nodemailer'
 
 const mailerconfig: MailerOptions = {
@@ -13,8 +13,8 @@ const mailerconfig: MailerOptions = {
 	//     }
 	// }),
 	transport: `${ process.env.MAILER_DRIVER }://${ process.env.MAILER_USER }:${ process.env.MAILER_PASSWORD }@${ process.env.MAILER_HOST }:${ process.env.MAILER_PORT }`,
-	template: {
-		dir: join(__dirname, '..', 'template'),
+	template : {
+		dir    : join(__dirname, '..', 'template'),
 		adapter: new PugAdapter(),
 		options: {
 			strict: true

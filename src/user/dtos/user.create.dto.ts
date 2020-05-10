@@ -1,31 +1,31 @@
-import { IsDateString, IsLatitude, IsLongitude, IsNotEmpty, IsNumberString } from 'class-validator'
+import { IsDateString, IsOptional, IsLatitude, IsLongitude, IsNotEmpty, IsNumberString } from 'class-validator'
 
 export class UserCreate {
 	@IsNotEmpty()
 	name: string
-
+	
 	@IsNotEmpty()
 	email: string
-
-	@IsNotEmpty()
+	
+	@IsOptional()
 	@IsNumberString()
-	phone: string
-
-	@IsNotEmpty()
+	phone?: string
+	
+	@IsOptional()
 	@IsDateString()
-	dob: string
-
-	@IsNotEmpty()
-	address: string
-
+	dob?: string
+	
+	@IsOptional()
+	address?: string
+	
 	@IsNotEmpty()
 	@IsLongitude()
 	longitude: number
-
+	
 	@IsNotEmpty()
 	@IsLatitude()
 	latitude: number
-
+	
 	@IsNotEmpty()
 	password: string
 }

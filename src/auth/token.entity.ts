@@ -4,17 +4,17 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, U
 export class TokenEntity extends BaseEntity {
 	@PrimaryGeneratedColumn('increment')
 	id: number
-
+	
 	@Column()
 	sign: string
-
+	
 	@CreateDateColumn({
-		type: 'timestamptz'
-	})
+		                  type: 'timestamptz'
+	                  })
 	created: string
-
+	
 	@UpdateDateColumn({
-		type: 'timestamptz'
-	})
+		                  type: 'timestamptz'
+	                  })
 	updated: string
 }

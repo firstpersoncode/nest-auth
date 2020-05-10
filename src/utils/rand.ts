@@ -1,20 +1,26 @@
 export function getRandomInRange (from, to, fixed) {
-	return (Math.random() * (to - from) + from).toFixed(fixed) * 1
+	return (
+		       Math.random() *
+		       (
+			       to - from
+		       ) +
+		       from
+	       ).toFixed(fixed) * 1
 	// .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
 
 export function makeEmail () {
 	var strValues = 'abcdefg12345'
-	var strEmail = ''
+	var strEmail  = ''
 	var strTmp
 	for (var i = 0; i < 10; i++) {
-		strTmp = strValues.charAt(Math.round(strValues.length * Math.random()))
+		strTmp   = strValues.charAt(Math.round(strValues.length * Math.random()))
 		strEmail = strEmail + strTmp
 	}
-	strTmp = ''
+	strTmp   = ''
 	strEmail = strEmail + '@'
 	for (var j = 0; j < 8; j++) {
-		strTmp = strValues.charAt(Math.round(strValues.length * Math.random()))
+		strTmp   = strValues.charAt(Math.round(strValues.length * Math.random()))
 		strEmail = strEmail + strTmp
 	}
 	strEmail = strEmail + '.com'
@@ -26,7 +32,10 @@ export function capFirst (string) {
 }
 
 export function getRandomInt (min, max) {
-	return Math.floor(Math.random() * (max - min)) + min
+	return Math.floor(Math.random() *
+	                  (
+		                  max - min
+	                  )) + min
 }
 
 export function generateName () {
@@ -1380,7 +1389,7 @@ export function generateName () {
 		'zigzag',
 		'rocky'
 	]
-
+	
 	var name2 = [
 		'people',
 		'history',
@@ -2884,6 +2893,6 @@ export function generateName () {
 		'Tom',
 		'Lieuwe'
 	]
-
+	
 	return capFirst(name1[getRandomInt(0, name1.length + 1)]) + ' ' + capFirst(name2[getRandomInt(0, name2.length + 1)])
 }
